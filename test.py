@@ -9,7 +9,7 @@ def direction(facing, turn):
         "W": 270,
         "NW": 315
         }
-    t = rose[facing]+turn
+    t = abs(rose[facing]+turn)
     if t > 361 : t %= 360
     for key, value in rose.items():
         if t == value:
@@ -19,5 +19,5 @@ def direction(facing, turn):
 
 print(direction("S", 180))
 print(direction("SE", -45))
-print(direction("W", 495))
+print(direction("W", -495))
 print(direction("N", 180))
